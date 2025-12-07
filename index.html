@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show and Hide password</title>
+    <style>
+         *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+         }
+
+          body{
+            height: 100vh;
+            font-family:cursive;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+            background-color: rgb(0, 0, 0);
+            
+          }
+
+          .container{
+            background-color: rgb(83, 223, 52) ;
+            padding: 50px;  
+            border-radius: 30px;  
+            border: 5px solid white; 
+            width: 300px;  
+            text-align: center;
+          }
+
+          .input-container{
+            display: flex;
+            align-items: center;
+            position : relative;
+          }
+
+          input{
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            color: #333;
+          }
+          .eye-icon{
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            color:#333;
+          }
+          .lable{
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+          }
+    </style>
+</head>
+<body>
+  
+   <div class="container">
+    <label for="passes">
+       <h2>Enter Password</h2>
+    </label>
+    <div class="input-container">
+        <input id="passes" placeholder="Your Password" type="password"/>
+        <span class="eye-icon" id="eye-icon"></span>
+    </div>
+   </div>
+   
+    <script>
+          let input = document.getElementById('passes');
+          let eyeIcon = document.getElementById('eye-icon');
+          eyeIcon.addEventList('click', function(){
+           if (input.type ==='password'){
+            input.type = 'text';
+            eyeIcon.textContent = '';
+           }
+          })
+    </script>
+</body>
+</html>
